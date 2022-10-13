@@ -21,7 +21,7 @@ import com.example.peliculas.view.IPeliculaView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements IPeliculaView {
+public class MainActivity extends AppCompatActivity implements IPeliculaView, IBookView {
 
     private IPeliculasPresenter peliculasPresenter;
     private PeliculasAdapter adapter;
@@ -39,13 +39,13 @@ public class MainActivity extends AppCompatActivity implements IPeliculaView {
         rvPeliculas.setAdapter(adapter);
         rvPeliculas.setLayoutManager(new LinearLayoutManager(this));
 
-        //this.bookPresenter = new BookPresenter(this);
-        //this.bookPresenter.getBooks();
+        this.bookPresenter = new BookPresenter(this);
+        this.bookPresenter.getBooks();
 
-        //RecyclerView rvBooks = (RecyclerView) findViewById(R.id.books_list);
-        //this.adapter2 = new BooksAdapter(new ArrayList<>());
-        //rvBooks.setAdapter(adapter2);
-        //rvBooks.setLayoutManager(new LinearLayoutManager(this));
+        RecyclerView rvBooks = (RecyclerView) findViewById(R.id.books_list);
+        this.adapter2 = new BooksAdapter(new ArrayList<>());
+        rvBooks.setAdapter(adapter2);
+        rvBooks.setLayoutManager(new LinearLayoutManager(this));
 
 
     }
@@ -62,14 +62,14 @@ public class MainActivity extends AppCompatActivity implements IPeliculaView {
 
     }
 
-   // @Override
-    //public void onBookSuccess(List<Book> books) {
-       // adapter2.reloadData(books);
-    //}
+    @Override
+    public void onBookSuccess(List<Book> books) {
+        adapter2.reloadData(books);
+    }
 
-    //@Override
-    //public void onBookError(String msg) {
-       // Toast.makeText(this, msg, Toast.LENGTH_LONG)
-         //       .show();
-    //}
+    @Override
+    public void onBookError(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_LONG)
+                .show();
+    }
 }

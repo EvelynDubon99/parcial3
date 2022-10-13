@@ -10,7 +10,7 @@ import retrofit2.http.GET;
 
 public interface BooksApi {
 
-    @GET("/books.json")
+    @GET("books.json")
     Call<List<Book>> getBooks();
 
 }

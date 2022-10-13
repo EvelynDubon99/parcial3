@@ -19,7 +19,7 @@ public class BookModel implements IBookModel {
 
     public BookModel(IBookPresenter presenter) {
         this.presenter = presenter;
-        api = ApiCliant.getInstance().create(BooksApi.class);
+        api = ApiCliant.getInstance2().create(BooksApi.class);
     }
 
     @Override
