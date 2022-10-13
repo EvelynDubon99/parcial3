@@ -4,19 +4,20 @@ import com.google.gson.annotations.SerializedName;
 
 public class Pelicula {
     @SerializedName("title")
-        String title;
+    public String title;
     @SerializedName("year")
-        Number year;
+    public  String year;
     @SerializedName("runtime")
-        Number runtime;
+    public String runtime;
     @SerializedName("generes")
-        String generes;
+    public String[] generes;
     @SerializedName("director")
-        String director;
+    public String director;
     @SerializedName("actors")
-        String actors;
+    public String actors;
     @SerializedName("plot")
-        String plot;
+    public String plot;
     @SerializedName("posterUrl")
-        String posterUrl;
+    public String posterUrl;
+
 }

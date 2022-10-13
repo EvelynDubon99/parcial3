@@ -4,10 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.peliculas.R;
 import com.example.peliculas.bean.Pelicula;
 
@@ -41,6 +44,13 @@ public class PeliculasAdapter extends RecyclerView.Adapter<PeliculasAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Pelicula pelicula = mPelicula.get(position);
+        holder.title.setText(pelicula.title);
+        holder.year.setText(pelicula.year);
+        holder.runtime.setText(pelicula.runtime);
+        holder.director.setText(pelicula.director);
+        holder.actores.setText(pelicula.actors);
+        holder.plot.setText(pelicula.plot);
+        Glide.with(this.context).load(pelicula.posterUrl).into(holder.posterUrl);
 
 
 
@@ -53,8 +63,19 @@ public class PeliculasAdapter extends RecyclerView.Adapter<PeliculasAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        private ImageView posterUrl;
+        private TextView title, year, runtime, director, actores, plot;
+
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            posterUrl = itemView.findViewById(R.id.peli_image);
+            title = itemView.findViewById(R.id.peli_title);
+            year = itemView.findViewById(R.id.peli_year);
+            runtime = itemView.findViewById(R.id.peli_runtime);
+            director = itemView.findViewById(R.id.peli_director);
+            actores = itemView.findViewById(R.id.peli_actors);
+            plot = itemView.findViewById(R.id.peli_plot);
         }
     }
 }

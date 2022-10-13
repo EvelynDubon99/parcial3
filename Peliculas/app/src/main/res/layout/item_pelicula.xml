@@ -1,6 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp"
+    android:layout_marginTop="20dp"
+    android:background="@drawable/back"
+    >
 
+    <ImageView
+        android:id="@+id/peli_image"
+        android:layout_width="113dp"
+        android:layout_height="154dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/peli_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Titulo pelicula"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/peli_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <TextView
+        android:id="@+id/peli_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/peli_image"
+        app:layout_constraintTop_toBottomOf="@id/peli_title"
+        android:layout_marginStart="20dp"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:text="1982"
+        />
+    <TextView
+        android:id="@+id/peli_runtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/peli_image"
+        app:layout_constraintTop_toBottomOf="@id/peli_year"
+        android:layout_marginStart="20dp"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:text="Runtime"
+        />
+    <TextView
+        android:id="@+id/peli_director"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/peli_image"
+        app:layout_constraintTop_toBottomOf="@id/peli_runtime"
+        android:layout_marginStart="20dp"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:text="Director"
+        />
+    <TextView
+        android:id="@+id/peli_actors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/peli_image"
+        app:layout_constraintTop_toBottomOf="@id/peli_director"
+        android:layout_marginStart="20dp"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:text="Actores"
+        />
+
+    <TextView
+        android:id="@+id/peli_plot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/peli_image"
+        app:layout_constraintTop_toBottomOf="@id/peli_actors"
+        android:layout_marginStart="20dp"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:text="Plot"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
